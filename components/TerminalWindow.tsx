@@ -16,7 +16,7 @@ const HELP: [string, string][] = [
   ["about", "пара слов о себе"],
   ["projects", "проекты"],
   ["stack", "технологии"],
-  ["experience", "опыт работы"],
+  ["experience", "образование и опыт"],
   ["contact", "как связаться"],
   ["cd <раздел>", "перейти к разделу страницы"],
   ["clear", "очистить экран (Ctrl+L)"],
@@ -45,7 +45,7 @@ function Neofetch() {
   const rows: [string, string][] = [
     ["role", profile.role],
     ["stack", profile.stackLine],
-    ["uptime", profile.uptime],
+    ["education", profile.education],
     ["location", profile.location],
   ];
   return (
@@ -112,9 +112,10 @@ function output(name: string, args: string[]): ReactNode {
       ));
     case "experience":
       return profile.experience.map((e) => (
-        <div key={e.hash}>
-          <span className={s.hash}>{e.hash}</span> {e.title} @ <span className={s.accent}>{e.company}</span>{" "}
+        <div key={e.id}>
+          <span className={s.hash}>{e.id}</span> {e.title} @ <span className={s.accent}>{e.organization}</span>{" "}
           <span className={s.dim}>({e.period})</span>
+          <p className={s.dim}>{e.note}</p>
         </div>
       ));
     case "contact":

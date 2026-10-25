@@ -33,7 +33,7 @@ export function About() {
   return (
     <section id="about" className={s.section}>
       <div className="container">
-        <Prompt command="cat about.md" comment="кто я и на чём пишу" />
+        <Prompt command="cat about.md" comment="кто я и что умею" />
         <div className={s.aboutGrid}>
           <div className={s.aboutText}>
             {profile.about.map((p, i) => (
@@ -42,7 +42,7 @@ export function About() {
               </p>
             ))}
           </div>
-          <pre className={`mono ${s.tree}`} aria-label="Стек технологий" data-reveal style={delay(150)}>
+          <pre className={`mono ${s.tree}`} aria-label="Навыки и инструменты" data-reveal style={delay(150)}>
             {treeLines().map((line, i) => (
               <span key={i} className={s.treeLine} style={{ "--i": i } as CSSProperties}>
                 {line}

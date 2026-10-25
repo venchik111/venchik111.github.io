@@ -17,7 +17,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  height: 56px;
+  min-height: 56px;
+  flex-wrap: wrap;
+  padding-block: 10px;
 }
 
 .logo {
@@ -532,6 +534,7 @@
 .cardName {
   margin: 0;
   font-size: 17px;
+  overflow-wrap: anywhere;
   color: var(--accent-2);
 }
 
@@ -713,7 +716,7 @@
 .logItem {
   position: relative;
   display: grid;
-  grid-template-columns: 76px 140px 1fr;
+  grid-template-columns: 60px 100px minmax(0, 1fr);
   gap: 16px;
   padding: 16px;
   border-radius: var(--radius);
@@ -867,7 +870,8 @@
 
 .option {
   display: grid;
-  grid-template-columns: 110px 1fr auto;
+  grid-template-columns: 100px minmax(0, 1fr) auto;
+  overflow-wrap: anywhere;
   gap: 16px;
   padding: 12px 16px;
   border: 1px solid var(--border);

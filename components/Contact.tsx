@@ -1,5 +1,4 @@
 import { profile } from "@/data/profile";
-import { CopyEmail } from "./CopyEmail";
 import { delay } from "./delay";
 import { Prompt } from "./Prompt";
 import s from "./ui.module.css";
@@ -12,16 +11,13 @@ export function Contact() {
         <div className={s.contactGrid}>
           <div>
             <h3 className={s.cta} data-reveal>
-              Есть идея или проект?
+              Ищете стажёра в команду?
               <br />
               <span className={s.ctaAccent}>Давайте обсудим.</span>
             </h3>
             <p className={s.contactIntro} data-reveal style={delay(120)}>
-              Отвечаю в течение дня. Быстрее всего — в Telegram.
+              Ищу стажировку или начальную позицию в Python-разработке. Готов работать удалённо или в офисе. Для связи — Telegram.
             </p>
-            <div data-reveal style={delay(220)}>
-              <CopyEmail email={profile.email} />
-            </div>
           </div>
           <ul className={`mono ${s.options}`}>
             {profile.contacts.map((c, i) => (

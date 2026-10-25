@@ -52,7 +52,9 @@
 
 .title {
   flex: 1;
-  margin-right: 44px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  margin-right: 0;
   text-align: center;
   font-size: 12px;
   color: var(--muted);
@@ -77,6 +79,7 @@
 .out {
   margin: 2px 0 10px;
   color: var(--text);
+  overflow-wrap: anywhere;
   animation: lineIn 0.35s var(--ease-out) both;
 }
 
@@ -208,5 +211,19 @@
   }
   .table > div {
     grid-template-columns: 100px 1fr;
+  }
+}
+
+.neo > div {
+  min-width: 0;
+}
+
+@media (max-width: 480px) {
+  .line {
+    flex-wrap: wrap;
+  }
+
+  .input {
+    flex-basis: 100%;
   }
 }
