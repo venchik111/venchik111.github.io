@@ -1,27 +1,19 @@
-import { About } from "@/components/About";
-import { Contact } from "@/components/Contact";
-import { Effects } from "@/components/Effects";
-import { Experience } from "@/components/Experience";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { Marquee } from "@/components/Marquee";
-import { Projects } from "@/components/Projects";
+import { Desktop } from "@/components/os/Desktop";
+import { Phone } from "@/components/os/Phone";
 
+// Десктоп (Hyprland) и телефон (Phosh) рендерятся оба; какой показать, решает CSS по ширине экрана.
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Marquee />
-        <Projects />
-        <About />
-        <Experience />
-        <Contact />
-      </main>
-      <Footer />
-      <Effects />
-    </>
+    <div className="os">
+      <h1 className="sr-only">
+        Иван Соловьев — начинающий Python-разработчик. Портфолио в виде рабочего стола Linux
+      </h1>
+      <div className="only-desk">
+        <Desktop />
+      </div>
+      <div className="only-phone">
+        <Phone />
+      </div>
+    </div>
   );
 }
