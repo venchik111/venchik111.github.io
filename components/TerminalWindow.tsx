@@ -36,7 +36,8 @@ const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 function Ps1() {
   return (
     <span className={s.ps1}>
-      <span className={s.accent}>{profile.handle}@portfolio</span>:<span className={s.path}>~</span>$
+      <span className={`${s.accent} ${s.host}`}>{profile.handle}@portfolio:</span>
+      <span className={s.path}>~</span>$
     </span>
   );
 }

@@ -41,6 +41,10 @@ export function About() {
                 {p}
               </p>
             ))}
+            <div className={s.seeking} data-reveal style={delay(200)}>
+              <span className={`mono ${s.seekingLabel}`}>## что ищу</span>
+              <p>{profile.seeking}</p>
+            </div>
           </div>
           <pre className={`mono ${s.tree}`} aria-label="Навыки и инструменты" data-reveal style={delay(150)}>
             {treeLines().map((line, i) => (

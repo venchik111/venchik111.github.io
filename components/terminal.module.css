@@ -218,12 +218,9 @@
   min-width: 0;
 }
 
+/* На узком экране приглашение сокращается до «~$», чтобы ввод оставался в той же строке. */
 @media (max-width: 480px) {
-  .line {
-    flex-wrap: wrap;
-  }
-
-  .input {
-    flex-basis: 100%;
+  .host {
+    display: none;
   }
 }

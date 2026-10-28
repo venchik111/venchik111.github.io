@@ -26,7 +26,13 @@ export function Hero() {
           </h1>
           <p className={`enter mono ${s.heroRole}`} style={delay(200)}>
             {profile.role}
-            <span className={s.muted}> · {profile.location}</span>
+          </p>
+          <p className={`enter mono ${s.heroLocation}`} style={delay(250)}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" />
+              <circle cx="12" cy="9.5" r="2.5" />
+            </svg>
+            {profile.location}
           </p>
           <p className={`enter ${s.heroTagline}`} style={delay(300)}>
             {profile.tagline}
@@ -38,14 +44,15 @@ export function Hero() {
             <a href="#contact" className={s.btn}>
               ./contact
             </a>
+            <a href={profile.cvUrl} className={`${s.btn} ${s.btnGhost}`} target="_blank" rel="noreferrer">
+              ./resume <span aria-hidden="true">↗</span>
+            </a>
           </div>
           <dl className={`enter ${s.stats}`} style={delay(500)}>
             {profile.stats.map((st) => (
               <div key={st.label} className={s.stat}>
                 <dt>{st.label}</dt>
-                <dd className="mono">
-                  <CountUp value={st.value} suffix={st.suffix} />
-                </dd>
+                <dd className="mono">{typeof st.value === "number" ? <CountUp value={st.value} /> : st.value}</dd>
               </div>
             ))}
           </dl>
