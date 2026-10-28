@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { JetBrains_Mono, Noto_Sans } from "next/font/google";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
-const sans = Inter({
+const sans = Noto_Sans({
   subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
 });
 
 const mono = JetBrains_Mono({
   subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "700"],
   variable: "--font-mono",
 });
 
@@ -18,13 +20,13 @@ export const metadata: Metadata = {
   description: profile.tagline,
 };
 
+export const viewport: Viewport = {
+  themeColor: "#111214",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
-      <head>
-        {/* До первой отрисовки: включает скрытие блоков, которые появятся при прокрутке. */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
-      </head>
+    <html lang="ru" className={`${sans.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );

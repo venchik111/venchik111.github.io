@@ -1,6 +1,10 @@
-// featured: крупная карточка на две колонки; highlight — результат проекта.
+// featured: проект, который показывается первым; highlight — результат проекта.
+// slug — имя папки в репозитории; kind и lang выводятся колонками в файловом менеджере.
 export type Project = {
   name: string;
+  slug: string;
+  kind: string;
+  lang: string;
   description: string;
   contribution: string;
   stack: string[];
@@ -12,6 +16,9 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "Transaction Analysis",
+    slug: "transaction_analysis",
+    kind: "учебный",
+    lang: "Python",
     description:
       "Учебный проект для анализа банковских операций: поиск по описанию и категории, JSON-сводка для главной страницы, Excel-отчёты о тратах и получение курсов валют и цен акций через API.",
     contribution:
@@ -23,6 +30,9 @@ export const projects: Project[] = [
   },
   {
     name: "WebEducation",
+    slug: "WebEducation",
+    kind: "хакатон · команда",
+    lang: "фронтенд",
     description:
       "Командная образовательная платформа для подготовки школьников 1–9 классов по спортивному программированию. Проект реализовывался с помощью ИИ-инструментов.",
     contribution:
@@ -33,6 +43,9 @@ export const projects: Project[] = [
   },
   {
     name: "BLITZ_ARENA",
+    slug: "FirsterChuv",
+    kind: "хакатон · команда",
+    lang: "фронтенд",
     description:
       "Командный прототип платформы блиц-турниров по программированию 1 на 1. Проект реализовывался с помощью ИИ-инструментов.",
     contribution:
@@ -43,6 +56,9 @@ export const projects: Project[] = [
   },
   {
     name: "Nothing Interface for Ryoku",
+    slug: "ryoku-nothing-interface",
+    kind: "личный",
+    lang: "Linux",
     description:
       "Личный проект оформления рабочего стола Linux по мотивам Nothing OS. Проект реализовывался с помощью ИИ-инструментов.",
     contribution:
@@ -52,3 +68,6 @@ export const projects: Project[] = [
     highlight: "Опубликованный комплект: тема, шесть плагинов, экран блокировки и инструкция",
   },
 ];
+
+// Языки и библиотеки — с точкой в тегах; остальные теги (роли, подходы) нейтральные.
+export const LANGS = ["Python", "pandas", "openpyxl", "requests", "pytest", "Linux"];
